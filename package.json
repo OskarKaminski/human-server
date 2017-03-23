@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "npm run start:production",
     "start": "nodemon -L ./src/index.js --watch src --exec babel-node",
     "start:production": "npm run build && npm run serve",
     "build": "babel src -d dist && copyfiles -u 1 src/**/*.json dist",
