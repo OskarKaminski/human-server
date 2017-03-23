@@ -4,14 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "npm run start:production",
+    "postinstall": "npm run build",
     "start": "nodemon -L ./src/index.js --watch src --exec babel-node",
     "start:production": "npm run build && npm run serve",
-    "build": "babel src -d dist && copyfiles -u 1 src/**/*.json dist",
+    "build": "babel src -d dist",
     "serve": "node dist/index.js"
-  },
-  "repository": {
-    "type": "git"
   },
   "author": "Oskar Kaminski",
   "license": "ISC",
@@ -19,9 +16,7 @@
     "kcors": "^2.2.1",
     "koa": "^2.0.0",
     "koa-json": "^2.0.2",
-    "koa-router": "^7.1.0"
-  },
-  "devDependencies": {
+    "koa-router": "^7.1.0",
     "babel": "^6.23.0",
     "babel-cli": "^6.23.0",
     "babel-plugin-transform-async-generator-functions": "^6.22.0",
